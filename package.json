@@ -1,0 +1,57 @@
+{
+  "name": "forge",
+  "version": "1.0.0",
+  "description": "Command-line interface to interact with and manage your projects and experiments.",
+  "main": "index.js",
+  "bin": "dist/index.js",
+  "pkg": {
+    "assets": [
+      "bin/forge-engine*"
+    ],
+    "targets": [
+      "node18-linux-x64",
+      "node18-win-x64",
+      "node18-macos-x64"
+    ],
+    "outputPath": "dist-build"
+  },
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "build": "tsup",
+    "package": "npm run build && npx pkg ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MRuhan17/Forge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/MRuhan17/Forge/issues"
+  },
+  "homepage": "https://github.com/MRuhan17/Forge#readme",
+  "dependencies": {
+    "better-sqlite3": "^12.8.0",
+    "commander": "^14.0.3",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "ink": "^7.0.0",
+    "react": "^19.2.5",
+    "winston": "^3.19.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "pkg": "^5.8.1",
+    "tsup": "^8.5.1",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2"
+  }
+}
