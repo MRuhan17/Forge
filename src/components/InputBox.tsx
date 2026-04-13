@@ -8,10 +8,10 @@ interface InputBoxProps {
 
 export const InputBox: React.FC<InputBoxProps> = ({ prompt, value }) => {
   return (
-    <Box paddingX={1} marginTop={1} borderStyle="single" borderColor="green">
-      <Text bold color="yellow">{prompt}</Text>
-      <Text color="white"> {value}</Text>
-      <Text color="gray">█</Text>
+    <Box paddingY={0}>
+      <Text bold color="blue">{prompt} </Text>
+      <Text color="white">{value}</Text>
+      <Text color="white" inverse>_</Text>
     </Box>
   );
 };

@@ -37,7 +37,7 @@ export default function Hero() {
     <section 
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="relative min-h-screen flex flex-col items-center pt-52 pb-40 px-6 overflow-hidden"
+      className="relative flex flex-col items-center py-20 px-6 overflow-hidden"
     >
       {/* Background Decor */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
@@ -47,14 +47,6 @@ export default function Hero() {
       </div>
 
       <div className="max-w-7xl mx-auto text-center z-10 w-full">
-        {/* Floating Dashboard Elements around the Hero */}
-        <div className="absolute top-40 left-10 hidden xl:block">
-           <DashFloatingCard icon={<Activity className="text-cyan-400" />} label="Real-time Execution" value="99.9%" />
-        </div>
-        <div className="absolute top-40 right-10 hidden xl:block">
-           <DashFloatingCard icon={<Shield className="text-purple-400" />} label="Security Protocol" value="Encrypted" />
-        </div>
-
         <motion.div 
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}

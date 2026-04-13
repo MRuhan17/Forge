@@ -1,23 +1,22 @@
 export const FALLBACK_RELEASES = [
   {
     id: 1,
-    tag_name: "v0.1-alpha",
+    tag_name: "v1.0.0-stable",
     published_at: new Date().toISOString(),
-    body: "The genesis of Forge. A distributed TUI ecosystem featuring a high-concurrency Rust engine, non-blocking Task orchestration, and an interactive React-based terminal dashboard. Designed for architects who demand zero-latency workflows.",
-    html_url: "https://github.com/MRuhan17/Forge",
+    body: "Forge Production Release. Secure, low-latency infrastructure orchestration. Fully optimized for high-concurrency environments.",
     assets: [
       {
-        name: "forge-windows-x64.exe",
+        name: "Forge Windows x64",
         browser_download_url: "/downloads/forge-windows.exe",
         size: 15728640 
       },
       {
-        name: "forge-macos-arm64",
+        name: "Forge macOS ARM",
         browser_download_url: "/downloads/forge-macos",
         size: 12582912 
       },
       {
-        name: "forge-linux-x64",
+        name: "Forge Linux x64",
         browser_download_url: "/downloads/forge-linux",
         size: 14680064 
       }

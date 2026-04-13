@@ -23,7 +23,7 @@ export interface Task {
 
 export type Tab = 'projects' | 'experiments' | 'tasks' | 'activities';
 
-export type ActivityType = 'create' | 'delete' | 'update' | 'system';
+export type ActivityType = 'create' | 'delete' | 'update' | 'system' | 'command' | 'ai' | 'error' | 'success';
 
 export interface Activity {
   id: string;
@@ -37,3 +37,10 @@ export type InputMode = 'normal' | 'input' | 'confirm' | 'command';
 export type ViewState = 
   | { type: 'list' }
   | { type: 'project_detail'; projectId: string };
+
+export type InputType = 'command' | 'nl';
+
+export interface ParsedInput {
+  type: InputType;
+  payload: string;
+}

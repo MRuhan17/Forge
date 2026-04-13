@@ -1,19 +1,17 @@
 import React from 'react';
 import { Box, Text } from 'ink';
-import { InputMode } from '../types';
 
 interface FooterProps {
   feedback: string;
-  mode: InputMode;
   apiConnected?: boolean;
 }
 
-export const Footer: React.FC<FooterProps> = ({ feedback, mode, apiConnected = true }) => {
+export const Footer: React.FC<FooterProps> = ({ feedback, apiConnected = true }) => {
   return (
     <Box paddingX={1} marginTop={1} justifyContent="space-between" borderStyle="single" borderTop={false} borderLeft={false} borderRight={false} borderBottom={false} borderColor="dim">
       <Box flexShrink={0} marginRight={2}>
-        <Text color={mode === 'normal' ? 'blue' : 'yellow'} bold>
-          {mode.toUpperCase()}
+        <Text color="blue" bold>
+          TERMINAL
         </Text>
         <Text color="gray"> │ </Text>
         <Text color={apiConnected ? 'green' : 'red'}>
@@ -29,10 +27,7 @@ export const Footer: React.FC<FooterProps> = ({ feedback, mode, apiConnected = t
 
       <Box flexShrink={0}>
         <Text color="gray">
-           {mode === 'normal' && '[:] cmd | [n] new | [d] del | [q] quit'}
-           {mode === 'input' && 'Enter: confirm | ESC: cancel'}
-           {mode === 'confirm' && 'y/n: confirm | ESC: cancel'}
-           {mode === 'command' && 'Enter to run | ESC to cancel'}
+           Type /help for commands. ↑/↓ history
         </Text>
       </Box>
     </Box>

@@ -1,21 +1,35 @@
-import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import FeatureSection from '@/components/FeatureSection';
+"use client";
+
+import { AppFrame } from "@/components/dashboard/AppFrame";
+import { DashboardHeader } from "@/components/dashboard/DashboardHeader";
+import Hero from "@/components/Hero";
+import FeatureSection from "@/components/FeatureSection";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Mimic Mentiora page loading experience
+    const timer = setTimeout(() => setIsLoading(false), 800);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <main className="min-h-screen">
-      <Navbar />
-      <Hero />
-      <FeatureSection />
+    <AppFrame active="My Dashboard" loading={isLoading}>
+      <DashboardHeader firstName="Ruhan" />
       
-      <footer className="py-12 border-t border-white/5 bg-black">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-gray-500 text-sm">
-            &copy; {new Date().getFullYear()} Forge. Built for high-performance developer workflows.
-          </p>
+      <div className="space-y-12">
+        {/* Main Hero Component as the featured "Plan" section */}
+        <section className="rounded-[4rem] bg-zinc-950/50 border border-white/5 overflow-hidden">
+          <Hero />
+        </section>
+
+        {/* Feature Grid matching Mentiora's Insights layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <FeatureSection />
         </div>
-      </footer>
-    </main>
+      </div>
+    </AppFrame>
   );
 }
